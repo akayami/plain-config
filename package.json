@@ -1,0 +1,24 @@
+{
+  "name": "plain-config",
+  "version": "0.0.1",
+  "description": "A very simple config loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akayami/plain-config.git"
+  },
+  "keywords": [
+    "config",
+    "loader",
+    "simple"
+  ],
+  "author": "Tomasz Rakowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akayami/plain-config/issues"
+  },
+  "homepage": "https://github.com/akayami/plain-config#readme"
+}
