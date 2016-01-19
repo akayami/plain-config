@@ -1,14 +1,14 @@
 var path = require('path');
 var argv = require('minimist')(process.argv.slice(2));
-var appPath = process.env.PWD +path.sep;
 
 var config = {};
 
 module.exports  = function(appRoot) {
 
+	var appPath = process.env.PWD  + path.sep;
 	if(appRoot) {
-		console.info('Overwriting default application lookup with:' + appRoot);
 		appPath = appRoot;
+		console.info('Overwriting default application lookup with: ' + appPath);
 	}
 
 	if (argv.base) {
@@ -20,9 +20,9 @@ module.exports  = function(appRoot) {
 		}
 	} else {
 		try {
-			var config = require(appPath + './conf/config');
+			var config = require(appPath + 'conf/config.js');
 		} catch(e) {
-			console.error('Failed to find default config: ' + appPath + './conf/config');
+			console.error('Failed to find default config: ' + appPath + 'conf/config.js');
 			console.error(e.message);
 		}
 	}
@@ -37,9 +37,9 @@ module.exports  = function(appRoot) {
 		}
 	} else {
 		try {
-			config = require(appPath + './conf/config-local.js')(config);
+			config = require(appPath + 'conf/config-local.js')(config);
 		} catch(e) {
-			console.warn('Failed to load default extending config config: ' + appPath + './conf/config-local.js');
+			console.warn('Failed to load default extending config config: ' + appPath + 'conf/config-local.js');
 			console.warn(e.message);
 			console.info('You can use --conf to extend base config and/or --base to pass the base config.');
 		}
