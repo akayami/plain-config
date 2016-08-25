@@ -5,7 +5,7 @@ var config = {};
 
 module.exports  = function(appRoot) {
 
-	var appPath = process.env.PWD  + path.sep;
+	var appPath = (process.env.PWD ? process.env.PWD : process.cwd())  + path.sep;
 	if(appRoot) {
 		appPath = appRoot;
 		console.info('Overwriting default application lookup with: ' + appPath);

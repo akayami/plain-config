@@ -1,6 +1,6 @@
 {
   "name": "plain-config",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A very simple config loader",
   "main": "index.js",
   "scripts": {
