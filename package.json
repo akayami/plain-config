@@ -1,6 +1,6 @@
 {
   "name": "plain-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A very simple config loader",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/akayami/plain-config#readme",
   "dependencies": {
-    "merge": "^1.2.0",
+    "deep-extend": "^0.5.0",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
