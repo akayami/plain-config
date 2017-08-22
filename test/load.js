@@ -65,6 +65,17 @@ describe('Basic Loading', function() {
 		}
 	});
 
+	it('Needs to merge configs "deeply"', (done) => {
+		let base = path.resolve(testDir, 'base.js');
+		let extend = path.resolve(testDir, 'extend2.js');
+		let result = plain([base, extend]);
+		if(result.deep.name == 'hello' && result.deep.items[0] == 4) {
+			done();
+		} else {
+			done('Failed to detect correct value');
+		}
+	});
+
 	before(function(done) {
 		let tasks = [];
 		tasks.push(function(cb) {
@@ -78,7 +89,8 @@ describe('Basic Loading', function() {
 					another: "another",
 					deep: {
 						name: "hello",
-						items: [1,2,3]
+						items: [1,2,3],
+						c: process.stdout
 					}
 				}`,
 				cb
@@ -110,7 +122,8 @@ describe('Basic Loading', function() {
 				`module.exports = {
 					item: 'new2',
 					deep: {
-						items: [4,5,6]
+						items: [4,5,6],
+						c: process.stdout
 					}
 				}`,
 				cb
